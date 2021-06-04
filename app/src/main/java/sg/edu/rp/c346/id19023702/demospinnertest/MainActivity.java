@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         tvDisplay = findViewById(R.id.textView);
         spnYesNo = findViewById(R.id.spinner);
 
-        spnYesNo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spnYesNo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
                         tvDisplay.setText("Spinner Item, Yes Selected");
@@ -33,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
-            public void onNothingselected(AdapterView<?> parent) {}
+            }
         });
-
     }
 }
 
